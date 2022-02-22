@@ -47,3 +47,4 @@ n = len(like_ing)
 like_ing.insert(0, n)
 for i in like_ing:
     print(i, end=' ')
+f.close()
