@@ -3,7 +3,7 @@ from collections import Counter
 like_ing = []
 dislike_ing = []
 elements = []
-with open("file.txt", "rt") as f:
+with open("input_data/e_elaborate.in.txt", "rt") as f:
     for line in f:
         elements.append(line.rstrip('\n'))
 elements.pop(0)
@@ -13,13 +13,17 @@ for i in list_like:
     for word in i.split():
         if word.isalnum():
             like_ing.append(word)
-        elif word.isnumeric():
+for i in list_like:
+    for word in i.split():
+        if word.isnumeric():
             like_ing.remove(word)
 for i in list_dislike:
     for word in i.split():
         if word.isalnum():
             dislike_ing.append(word)
-        elif word.isnumeric():
+for i in list_dislike:
+    for word in i.split():
+        if word.isnumeric():
             dislike_ing.remove(word)
 
 dict_1 = Counter(like_ing)
@@ -35,10 +39,6 @@ for i in dict_1:
                 like_ing.remove(i)
             elif dict_1[i] == dict_2[j]:
                 continue
-for i in like_ing:
-    for j in dislike_ing:
-        if i == j:
-            like_ing.remove(i)
 n = len(like_ing)
 like_ing.insert(0, n)
 for i in like_ing:
