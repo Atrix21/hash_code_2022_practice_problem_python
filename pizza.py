@@ -33,12 +33,10 @@ dislike_ing = list(set(dislike_ing))
 for i in dict_1:
     for j in dict_2:
         if i == j:
-            if dict_1[i] > dict_2[j]:
+            if dict_1[i] >= dict_2[j]:
                 dislike_ing.remove(i)
             elif dict_1[i] < dict_2[j]:
                 like_ing.remove(i)
-            elif dict_1[i] == dict_2[j]:
-                continue
 n = len(like_ing)
 like_ing.insert(0, n)
 for i in like_ing:
