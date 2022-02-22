@@ -13,17 +13,13 @@ for i in list_like:
     for word in i.split():
         if word.isalnum():
             like_ing.append(word)
-for i in list_like:
-    for word in i.split():
-        if word.isnumeric():
+        elif word.isnumeric():
             like_ing.remove(word)
 for i in list_dislike:
     for word in i.split():
         if word.isalnum():
             dislike_ing.append(word)
-for i in list_dislike:
-    for word in i.split():
-        if word.isnumeric():
+        elif word.isnumeric():
             dislike_ing.remove(word)
 
 dict_1 = Counter(like_ing)
