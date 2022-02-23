@@ -12,15 +12,15 @@ list_dislike = elements[1::2]
 
 
 def f1(l1, l2):
-    for i in l1:
-        for word in i.split():
+    for item in l1:
+        for word in item.split():
             if word.isalnum():
                 l2.append(word)
 
 
 def f2(l1, l2):
-    for i in l1:
-        for word in i.split():
+    for item in l1:
+        for word in item.split():
             if word.isnumeric():
                 l2.remove(word)
 
