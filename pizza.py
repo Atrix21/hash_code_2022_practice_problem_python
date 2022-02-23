@@ -9,22 +9,26 @@ with open("input_data/e_elaborate.in.txt", "rt") as f:
 elements.pop(0)
 list_like = elements[0::2]
 list_dislike = elements[1::2]
-for i in list_like:
-    for word in i.split():
-        if word.isalnum():
-            like_ing.append(word)
-for i in list_like:
-    for word in i.split():
-        if word.isnumeric():
-            like_ing.remove(word)
-for i in list_dislike:
-    for word in i.split():
-        if word.isalnum():
-            dislike_ing.append(word)
-for i in list_dislike:
-    for word in i.split():
-        if word.isnumeric():
-            dislike_ing.remove(word)
+
+
+def f1(l1, l2):
+    for i in l1:
+        for word in i.split():
+            if word.isalnum():
+                l2.append(word)
+
+
+def f2(l1, l2):
+    for i in l1:
+        for word in i.split():
+            if word.isnumeric():
+                l2.remove(word)
+
+
+f1(list_like, like_ing)
+f2(list_like, like_ing)
+f1(list_dislike, dislike_ing)
+f2(list_dislike, dislike_ing)
 
 dict_1 = Counter(like_ing)
 dict_2 = Counter(dislike_ing)
